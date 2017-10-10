@@ -17,8 +17,8 @@ var campgroundRoutes = require("./routes/campgrounds");
 var authRoutes = require("./routes/auth");
 
 // seedDB();
-mongoose.connect(process.env.DATABASEURL, { useMongoClient: true });
-// mongoose.connect("mongodb://camper:camper123@ds113825.mlab.com:13825/campsite");
+var url = process.env.DATABASEURL || "mongodb://localhost/camp_site";
+mongoose.connect(url, { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", ".ejs");
