@@ -49,10 +49,10 @@ app.use("/", authRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/campgrounds", campgroundRoutes);
 
-// app.listen(process.env.PORT, process.env.IP, function () {
-//     console.log("Server is running");
-// });
-
-app.listen(3000, function () {
+app.listen(process.env.PORT, process.env.IP, function () {
     console.log("Server is running");
 });
+
+// app.listen(3000, function () {
+//     console.log("Server is running");
+// });
