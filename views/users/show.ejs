@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<% var avatarPics = [
+'https://farm7.staticflickr.com/6228/6331318875_e7228c985f.jpg',
+'https://farm1.staticflickr.com/66/158583580_79e1c5f121.jpg',
+'https://farm5.staticflickr.com/4003/4250682406_2c2dd742df.jpg',
+'https://farm8.staticflickr.com/7576/15957421751_50bfe770c8.jpg',
+'https://farm4.staticflickr.com/3475/3842675275_8a5a0f5ae3.jpg',
+'https://farm8.staticflickr.com/7310/15887147853_ab6e786ea5.jpg',
+'https://farm3.staticflickr.com/2941/15187511890_3116a18613.jpg',
+'https://farm3.staticflickr.com/2941/15104533948_2111dd095c.jpg',
+'https://farm4.staticflickr.com/3024/2952958662_6b03394584.jpg'
+];
+var randomAvatar = avatarPics[Math.floor(Math.random() * avatarPics.length)] %>
+
+<div class="row">
+    <div class="col-md-4">
+        <h1><%= user.username %></h1>           
+        <div class="thumbnail">
+            <img src="<%= user.avatar || randomAvatar %>">
+            <% if (user.firstName || user.lastName || user.email) { %>
+                <div class="caption">
+                    <p><%= user.firstName || "" %> <%= user.lastName || "" %></p>
+                    <p><%= user.email || "" %></p>
+                </div>
+        
+            <% } %>
+        </div>
+        <%= user.bio || "" %>
+    </div>
+    <div class="col-md-8">
+        <h3><%= user.username %>'s Campgrounds:</h3>
+        <ul>
+            <% campgrounds.forEach(function (campground) { %>
+                <li><a href="/campgrounds/<%= campground._id %>"><%= campground.name %></a></li>
+            <% }) %>
+        </ul>
+    </div>
+</div>
+
+<% include ../partials/footer %>

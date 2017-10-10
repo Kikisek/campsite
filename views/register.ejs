@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+
+<div class="row">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/register" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input class="form-control" id="username" type="text" name="username">
+            </div>
+            <div class="form-group">
+                <label for="psw">Password</label>
+                <input class="form-control" id="psw" type="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="first">First Name</label>
+                <input class="form-control" id="first" type="text" name="firstName">
+            </div>
+            <div class="form-group">
+                <label for="last">Last Name</label>
+                <input class="form-control" id="last" type="text" name="lastName">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" id="email" type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="avatar">Avatar Image Url</label>
+                <input class="form-control" id="avatar" type="text" name="avatar">
+            </div>
+            <div class="form-group">
+                <label for="bio">Bio</label>
+                <textarea class="form-control" id="bio" name="bio"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="admin">Admin Code</label>
+                <input class="form-control" id="admin" type="text" name="adminValidation">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+        <a href="/campgrounds">Back</a>
+    </div>
+</div>
+
+<% include ./partials/footer %>

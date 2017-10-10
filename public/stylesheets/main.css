@@ -1,0 +1,39 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.delete-form {
+    display: inline;
+}
+
+/* Google Maps */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+    margin-bottom: 30px;
+}
+
+#footer {
+    bottom: 0;
+    width: 100%;
+    position: absolute;
+    height: 30px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+.footer-block {
+    /* margin: 0 auto; */
+    text-align: center;
+}
