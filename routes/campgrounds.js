@@ -28,10 +28,7 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
         username: req.user.username
     };
     geocoder.geocode(req.body.location, function (err, data) {
-        if (data.status !== "OK") {
-            req.flash("error", "Location not found!");
-            res.redirect("back");
-        } else {
+        if (data && data.status == "OK") {
             var lat = data.results[0].geometry.location.lat;
             var lng = data.results[0].geometry.location.lng;
             var location = data.results[0].formatted_address;
@@ -45,6 +42,9 @@ router.post("/", middleware.isLoggedIn, function (req, res) {
                     res.redirect("/campgrounds");
                 }
             });
+        } else {
+            req.flash("error", "Location not found!");
+            res.redirect("back");
         }
     });
 });
